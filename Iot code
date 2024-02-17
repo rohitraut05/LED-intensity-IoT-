@@ -1,0 +1,22 @@
+int LED = 9;
+int BRIGHT = 2;
+int FADE = 4;
+int Intensity = 0;
+
+void setup() {
+  // put your setup code here, to run once:
+pinMode(9,OUTPUT);
+pinMode(2,INPUT_PULLUP);
+pinMode(4,INPUT_PULLUP);
+
+}
+
+void loop() {
+  // put your main code here, to run repeatedly:
+if (digitalRead(BRIGHT == LOW))       Intensity=+5;
+if (digitalRead(FADE == LOW))          Intensity=-5;
+if (Intensity<=0)                    Intensity =0;
+if (Intensity>=255)                  Intensity =255;
+
+analogWrite(LED,Intensity);
+}
